@@ -1,6 +1,4 @@
-FROM openjdk:8-jdk-alpine
-WORKDIR /target
-ENV 8767
-EXPOSE 8767
-COPY ./target/*.jar api-gateway.jar
-ENTRYPOINT ["java", "-jar", "/api-gateway.jar"] 
+FROM openjdk:8
+ADD target/api-gateway-0.0.1-SNAPSHOT.jar  api-gateway-0.0.1.jar
+EXPOSE 8001
+ENTRYPOINT ["java" , "-jar" ,"api-gateway-0.0.1.jar"]
